@@ -1,0 +1,104 @@
+        //removeSpaces() will removes spaces in a string.
+        /* note to self
+        int main(){
+              char str[] = "g  eeks   for ge  eeks  ";
+              removeSpaces(str);
+              cout << str;
+              return 0;
+         }
+         output: geeksforgeeeks
+        */
+        /*
+        substr(pos, pos+count) returns only a part of a string that you choose. pos = position of first character. post+count is how many 
+        characters you want past the pos.
+        ex: std::string a = "0123456789abcdefghij";
+            std::string sub1 = a.substr(10);
+            std::cout << sub1 << '\n';
+            std::string sub2 = a.substr(5, 3);
+            std::cout << sub2 << '\n';
+
+            output: abcdefghij        
+                    567
+        */
+        /*
+        find() finds the string with the given character sequence. Return value: position of first character of the found substring or npos if no
+        such substring is found
+            void print(std::string::size_type n, std::string const &s)
+            {
+                if (n == std::string::npos) {
+                    std::cout << "not found\n";
+                } else {
+                    std::cout << "found: " << s.substr(n) << '\n';
+                }
+            }
+ 
+            int main()
+            {       
+                 std::string::size_type n;
+                 std::string const s = "This is a string";
+ 
+                 // search from beginning of string
+                 n = s.find("is");
+                 print(n, s);                                   output: 
+                                                                    found: is is a string
+                 // search from position 5                          found: is a string
+                 n = s.find("is", 5);                               found: a string
+                 print(n, s);                                       not found
+ 
+                 // find a single character
+                  n = s.find('a');
+                  print(n, s);
+ 
+                 // find a single character
+                 n = s.find('q');
+                 print(n, s);
+            }
+        */
+
+        For erase(), it removes a specified character from the string
+        Ex:
+        int main()
+        {
+            std::string s = "This is an example";
+            std::cout << s << '\n';
+ 
+            s.erase(0, 5); // Erase "This "
+            std::cout << s << '\n';
+ 
+            s.erase(std::find(s.begin(), s.end(), ' ')); // Erase ' '
+            std::cout << s << '\n';
+ 
+            s.erase(s.find(' ')); // Trim from ' ' to the end of the string
+            std::cout << s << '\n';
+        }
+        output:
+        This is an example
+        is an example
+        isan example
+        isan
+
+
+        stoi() function takes a string as an argument and returns its value. Following is a simple implementation:
+        int main() 
+        { 
+            string str1 = "45"; 
+            string str2 = "3.14159"; 
+            string str3 = "31337 geek"; 
+  
+            int myint1 = stoi(str1); 
+            int myint2 = stoi(str2); 
+            int myint3 = stoi(str3); 
+  
+            cout << "stoi(\"" << str1 << "\") is "
+                 << myint1 << '\n'; 
+            cout << "stoi(\"" << str2 << "\") is "
+                 << myint2 << '\n'; 
+            cout << "stoi(\"" << str3 << "\") is "
+                 << myint3 << '\n'; 
+  
+            return 0; 
+        } 
+        output:
+        stoi("45") is 45
+        stoi("3.14159") is 3
+        stoi("31337 geek") is 31337 
