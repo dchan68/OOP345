@@ -1,0 +1,22 @@
+Reflection
+
+The difference between internal and external linkage 
+
+from the code
+
+extern unsigned int g_sysClock;
+
+static unsigned COUNTER;
+
+extern identifies external linkage and this is used to refer to an entity that is declared in a scope
+from another module/ translation unit. 
+
+Static variables are internal linkages. They can be identified by the keyword static. This is used to 
+refere to another entity from within the same module but found in other scopes. 
+
+I also learned how to use argv and argc for the int main as well as using command lines for the debugging feature. 
+
+Changes that I made in upgrading my event class is plentiful. For example, since I had to ensure that the 
+description can be a null terminated string of any length, this means we have to allocate dynamic memory.
+To do this, I had to make the description into a pointer. On top of that, copy constructor was added. 
+ 
